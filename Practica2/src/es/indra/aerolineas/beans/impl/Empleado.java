@@ -1,7 +1,7 @@
 /**
  * 
  */
-package es.indra.aerolineas.beans;
+package es.indra.aerolineas.beans.impl;
 
 /**
  * @author josejarizav
@@ -16,5 +16,11 @@ public class Empleado extends Persona {
 	public String getNombre() {
 		return nombre;
 
+	}
+
+	@Override
+	public String solicitarInformacion() {
+		// TODO Auto-generated method stub
+		return "";
 	}
 }
