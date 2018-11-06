@@ -3,7 +3,10 @@
  */
 package es.indra.aerolineas.beans.impl;
 
+
+
 import es.indra.aerolineas.beans.IAerolinea;
+import es.indra.aerolineas.services.ReadFile;
 
 /**
  * @author josejarizav
@@ -74,8 +77,12 @@ public class Aerolinea implements IAerolinea {
 		this.vuelos = vuelos;
 	}
 
-	public void consultarVuelos(String origen) {
-		System.out.println("Metodo de 1 parametro: ".concat(origen));
+	public void consultarVuelos() {
+	  ReadFile r =new ReadFile();
+      r.retomarVuelos();
+      
+     
+      
 	}
 	
 	public void consultarVuelos(String origen, String destino) {

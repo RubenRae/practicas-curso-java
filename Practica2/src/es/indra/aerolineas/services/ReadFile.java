@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -17,20 +18,22 @@ import java.util.List;
 public class ReadFile {
 	
 	public void retomarVuelos() {
-		Path path = Paths.get("/Users/aula12/repositorios/remoto/vuelos.txt");
+		Path path = Paths.get("/Users/macbookpro/practicas-curso-java/vuelos.txt");
 		
 		try {
 			List<String>contenido = Files.readAllLines(path);
-			System.out.println(contenido);
-		} catch (IOException e) {
+			Iterator<String> iter = contenido.iterator();
+		      while (iter.hasNext())
+		        System.out.println(iter.next());	
+		    } catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		    }
+    
+		
 	}
 	
-	public static void main(String[] args) {
-		ReadFile r =new ReadFile();
-		r.retomarVuelos();
-	}
+
+	
 
 }

@@ -1,10 +1,11 @@
 package es.indra.aerolineas.beans;
 
+
 import es.indra.aerolineas.beans.impl.Vuelo;
 
 public interface IAerolinea {
-	
-	public void consultarVuelos(String origen);
+  
+    public void consultarVuelos() ;
 
 	
 	public void consultarVuelos(String origen, String destino);
