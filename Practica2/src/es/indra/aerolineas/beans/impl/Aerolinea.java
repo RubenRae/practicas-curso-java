@@ -5,7 +5,11 @@ package es.indra.aerolineas.beans.impl;
 
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import es.indra.aerolineas.beans.IAerolinea;
+import es.indra.aerolineas.exceptions.ErrorLecturaDeVuelosException;
 import es.indra.aerolineas.services.ReadFile;
 
 /**
@@ -79,11 +83,25 @@ public class Aerolinea implements IAerolinea {
 
 	public void consultarVuelos() {
 	  ReadFile r =new ReadFile();
-      r.retomarVuelos();
-      
-     
-      
+	  
+      List<String> lista= new ArrayList<>();
+	try {
+		lista = r.retomarVuelos();
+		 if(lista!= null && !lista.isEmpty()) {
+		      
+		      for(String l:lista) {
+					System.out.println(l);
+		      }
+		      }else {
+		    	  System.out.println("No se encontraron vuelos");
+		      } 
+			
+	} catch (ErrorLecturaDeVuelosException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
 	}
+	}
+     
 	
 	public void consultarVuelos(String origen, String destino) {
 		System.out.printf("Metodo de 2 parametros: %s y %s %n", origen, destino);

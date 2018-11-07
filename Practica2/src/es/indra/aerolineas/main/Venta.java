@@ -34,6 +34,7 @@ public class Venta {
 		IAerolinea aa = new Aerolinea(10, "American Airlines",vuelos);
 		
 		aa.consultarVuelos();
+		
 		aa.consultarVuelos("MAD", "NYC");
 		
 		aa.anularVuelos();
