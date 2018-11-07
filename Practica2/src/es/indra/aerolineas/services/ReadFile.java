@@ -22,9 +22,12 @@ public class ReadFile {
 		
 		try {
 			List<String>contenido = Files.readAllLines(path);
-			Iterator<String> iter = contenido.iterator();
-		      while (iter.hasNext())
-		        System.out.println(iter.next());	
+			//Iterator<String> iter = contenido.iterator();
+		    // while (iter.hasNext())
+		    //    System.out.println(iter.next());	
+			for(String l:contenido) {
+				System.out.println(l);
+			}
 		    } catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
