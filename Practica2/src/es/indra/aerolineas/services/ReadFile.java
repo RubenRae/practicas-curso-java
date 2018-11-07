@@ -21,7 +21,7 @@ import java.util.List;
 public class ReadFile {
 	
 	public List<String> retomarVuelos() throws ErrorLecturaDeVuelosException {
-		Path path = Paths.get("/Users/P.era-1/repositorios/Ruben/practicas-curso-java/vuelos.txt");
+		Path path = Paths.get("/Users/macbookpro/repositorios/practicas-curso-java/vuelos.txt");
 		List<String>contenido =new ArrayList<>();
 		try {
 			

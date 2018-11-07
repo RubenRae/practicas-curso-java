@@ -4,6 +4,7 @@
 package es.indra.aerolineas.main;
 
 import es.indra.aerolineas.beans.impl.Aerolinea;
+import es.indra.aerolineas.beans.impl.Billete;
 import es.indra.aerolineas.beans.impl.Empleado;
 import es.indra.aerolineas.beans.impl.Pasajero;
 import es.indra.aerolineas.beans.impl.Vuelo;
@@ -44,14 +45,21 @@ public class Venta {
 		Empleado emp = new Empleado();
 		emp.setNombre("Vendedor 1");
 		
-		Pasajero p = new Pasajero();
+		Billete b1 = new Billete();
+		b1.crearBillete();
+		b1.verBilletesPorFecha("03/05/2018");
 		
+		Pasajero p = new Pasajero();
 		Vuelo[] vuelosPasajero = {vuelos[0], vuelos[4]};
 		
 		p.setId(10);
 		p.setNombre("jose julian"); 
 		p.setApellido("Lorenzo"); 
 		p.setVuelos(vuelosPasajero);
+		p.setBillete(b1);
+		
+//		Billete b = new Billete();
+//		b.crearBillete();
 		
 		
 		System.out.println("*************************************************************************");

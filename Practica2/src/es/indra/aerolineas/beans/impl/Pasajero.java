@@ -11,8 +11,29 @@ package es.indra.aerolineas.beans.impl;
 public class Pasajero extends Persona {
 	
 	private Vuelo[] vuelos;
+	Billete billete;
+	
+	
+	
 
-	/**
+	public Pasajero() {
+    
+  }
+	public Pasajero(String nombre,String apellido, Billete billete) {
+	  super.nombre = nombre;
+	  //super.id = id;
+	  super.apellido= apellido;
+	  this.billete = billete;
+	}
+
+  
+  public Billete getBillete() {
+    return billete;
+  }
+  public void setBillete(Billete billete) {
+    this.billete = billete;
+  }
+  /**
 	 * @return the apellido
 	 */
 	public String getApellido() {
