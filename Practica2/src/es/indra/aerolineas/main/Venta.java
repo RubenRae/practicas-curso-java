@@ -8,6 +8,7 @@ import es.indra.aerolineas.beans.impl.Billete;
 import es.indra.aerolineas.beans.impl.Empleado;
 import es.indra.aerolineas.beans.impl.Pasajero;
 import es.indra.aerolineas.beans.impl.Vuelo;
+import es.indra.aerolineas.services.WriteFile;
 import es.indra.aerolineas.beans.IAerolinea;
 
 /**
@@ -58,6 +59,8 @@ public class Venta {
 		p.setVuelos(vuelosPasajero);
 		p.setBillete(b1);
 		
+		WriteFile w = new WriteFile();
+		w.crearArchivoPasajeros();
 //		Billete b = new Billete();
 //		b.crearBillete();
 		

@@ -11,13 +11,9 @@ import es.indra.aerolineas.services.*;
 
 public class Billete {
   
-  //Pasajero pasajero;
   String numAsiento;
   String fecha;
   String vuelo;
-  
-  //String vuel;
-  //String pas;
   
   public Billete() {
     
@@ -29,23 +25,6 @@ public class Billete {
   this.numAsiento=numAsiento;
   this.fecha=fecha;
   }
-  
-//  public Billete(Pasajero pasajero, String vuelo, String numAsiento, String fecha) {
-//    this.pasajero = pasajero;
-//    this.vuelo= vuelo;
-//    this.numAsiento=numAsiento;
-//    this.fecha=fecha;
-//  }
-  
-  
-  
-//  public String getPas() {
-//    return pas;
-//  }
-
-//  public void setPas(String pas) {
-//    this.pas = pas;
-//  }
 
 
   public String getVuelo() {
@@ -55,21 +34,6 @@ public class Billete {
   public void setVuelo(String vuelo) {
     this.vuelo = vuelo;
   }
-
-//  public String getVuel() {
-//    return vuel;
-//  }
-//
-//  public void setVuel(String vuel) {
-//    this.vuel = vuel;
-//  }
-
-//  public Pasajero getPasajero() {
-//    return pasajero;
-//  }
-//  public void setPasajero(Pasajero pasajero) {
-//    this.pasajero = pasajero;
-//  }
 
   
   public String getNumAsiento() {
@@ -97,49 +61,14 @@ public class Billete {
       List<Billete> bill = new ArrayList<>();
       Billete b1 = new Billete(v1,"44A","03/05/2018");
       bill.add(b1);
-      Billete b2 = new Billete(v2,"44A","03/05/2018");
+      Billete b2 = new Billete(v2,"12C","03/05/2018");
       bill.add(b2);
-      Billete b3 = new Billete(v3,"44A","08/05/2018");
+      Billete b3 = new Billete(v3,"35B","08/05/2018");
       bill.add(b3);
       return bill;
-//       
-//    List<Pasajero>pasajeros = new ArrayList<>();
-//    Pasajero p1 = new Pasajero(1,"jose julian", "Lorenzo");
-//    pasajeros.add(p1);
-//    Pasajero p2 = new Pasajero(2,"Ruben","Alonso");
-//    pasajeros.add(p2);
-//    Pasajero p3 = new Pasajero(3,"Laura","Gomez");
-//    pasajeros.add(p3);
-//    for(Pasajero p : pasajeros) {
-//      pas = p.getNombre();
-//      //System.out.println(pas);
-//    }
-//    
-//    
-//    List<Billete>billetes = new ArrayList<>();
-//    Billete b1 = new Billete(p1,v1,"45A","03/04/2018");
-//    billetes.add(b1);
-//    Billete b2 = new Billete(p2,v2,"23B","03/04/2018");
-//    billetes.add(b2);
-//    Billete b3 = new Billete(p3,v3,"34D","05/04/2018");
-//    billetes.add(b3);
-//    
-//
-//    Map<Billete,String> bill = new HashMap<>();
-//    bill.put(b1,b1.getFecha());
-//    bill.put(b2, b2.getFecha());
-//    bill.put(b3, b3.getFecha());
-//    
-//   for(Map.Entry<Billete, String> b : bill.entrySet()) {
-//     
-//      if(b.getValue().equals(b.getValue())) {
-//         
-//      Billete vuel = b.getKey();
-//      System.out.println(pas + " " + b.getValue() +" "+ vuel.getNumAsiento() + " " + vuel.getVuelo());
-//      }
-//   }
+
   } catch (ErrorLecturaDeVuelosException e) {
-    // TODO Auto-generated catch block
+    
     e.printStackTrace();
   }return null;
   }
@@ -164,7 +93,7 @@ public class Billete {
         if(j.getValue().equals(fecha))
           
           
-        System.out.println(j.getValue());
+       System.out.println(j.getValue()+ " " + j.getKey() + j.getKey().getBillete());
       
       }
       
@@ -172,4 +101,9 @@ public class Billete {
     
     
   }
+
+@Override
+public String toString() {
+	return "Billete [numAsiento=" + numAsiento + ", fecha=" + fecha + ", vuelo=" + vuelo + "]";
+}
 }
