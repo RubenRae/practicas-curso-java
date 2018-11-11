@@ -51,19 +51,27 @@ public class test {
     Compra comp1 = new Compra(clientes.get(0), "03/09/2018");
     comp1.comprarPoducto(productos.get(0));
     comp1.comprarPoducto(productos.get(2));
+    Compra comp2 = new Compra(clientes.get(1), "06/12/2018");
+    comp2.comprarPoducto(productos.get(1));
+    comp2.comprarPoducto(productos.get(3));
+    
     System.out.println("## Has comprado ##");
-    System.out.println(comp1.getProductos());
+    System.out.println("Compra 1: " +comp1.getProductos());
+    System.out.println("Compra 2: " +comp2.getProductos());
     
     System.out.println("");
     
     //Imprime el total del precio de la compra
     System.out.println("## Total de la compra: ##");
-    System.out.println(comp1.getTotal());
+    System.out.println("Compra 1: " +comp1.getTotal());
+    System.out.println("Compra 2: " +comp2.getTotal());
     System.out.println("");
     
     //Imprime el historico de compras de los clientes
     Historico historico = new Historico();
     historico.addCompra(clientes.get(0), comp1);
+    historico.addCompra(clientes.get(1), comp2);
+    
     
     sc.close();
 

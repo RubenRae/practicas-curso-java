@@ -12,16 +12,23 @@ public class Historico {
   
   
   
- //Metodo que crea un mapa con la clave cliente y valo compra
+ public Map<Cliente, Compra> getHist() {
+    return hist;
+  }
+
+
+
+
+  //Metodo que crea un mapa con la clave cliente y valo compra
   public void addCompra(Cliente cliente, Compra compra) {
     System.out.println("## Historial: ##");
     
     if(hist==null) {
       hist = new HashMap<>();
-      hist.put(cliente, compra);
+      
+      }hist.put(cliente, compra);
       for(Map.Entry<Cliente, Compra> list : hist.entrySet()) {
         System.out.println(list.getValue());
-      }
     }
     
     

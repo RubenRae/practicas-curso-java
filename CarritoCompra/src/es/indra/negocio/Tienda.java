@@ -5,6 +5,8 @@ import java.util.List;
 import es.indra.bean.Cliente;
 import es.indra.bean.Producto;
 
+
+
 public class Tienda {
   
   //Metodo que crea la lista de clientes
