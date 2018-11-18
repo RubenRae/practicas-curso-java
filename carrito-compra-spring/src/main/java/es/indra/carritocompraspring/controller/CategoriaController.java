@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import es.indra.carritocompraspring.aspects.anotacion.MedidorTiempo;
 import es.indra.carritocompraspring.model.Categoria;
 import es.indra.carritocompraspring.service.CategoriaService;
 
@@ -20,21 +19,20 @@ public class CategoriaController {
   @Autowired
   CategoriaService categoriaService;
 
-  @MedidorTiempo
   @RequestMapping(value = "/categoria", method = RequestMethod.GET)
   public ResponseEntity<List<Categoria>> getAllCategories() {
 
-    List<Categoria> todasLasBlogs = this.categoriaService.getAllCategories();
+    List<Categoria> todasLasCategorias = this.categoriaService.getAllCategories();
 
     ResponseEntity<List<Categoria>> response =
-        new ResponseEntity<List<Categoria>>(todasLasBlogs, HttpStatus.OK);
+        new ResponseEntity<List<Categoria>>(todasLasCategorias, HttpStatus.OK);
 
     return response;
 
   }
 
   @RequestMapping(value = "/categoria/{id}", method = RequestMethod.GET)
-  public ResponseEntity<Categoria> getById(@PathVariable("id") int id) {
+  public ResponseEntity<Categoria> getByIdCategoria(@PathVariable("id") int id) {
     Categoria c = this.categoriaService.getCategoriaById(id);
     if (c == null) {
       ResponseEntity<Categoria> response = new ResponseEntity<Categoria>(c, HttpStatus.OK);
@@ -49,14 +47,14 @@ public class CategoriaController {
   }
 
   @RequestMapping(value = "/categoria", method = RequestMethod.POST)
-  public ResponseEntity<Void> crearBlog(@RequestBody Categoria c) {
-    Categoria blog = this.categoriaService.saveCategoria(c);
+  public ResponseEntity<Void> crearCategoria(@RequestBody Categoria c) {
+    Categoria categoria = this.categoriaService.saveCategoria(c);
 
     return new ResponseEntity<Void>(HttpStatus.CREATED);
   }
 
   @RequestMapping(value = "/categoria/{id}", method = RequestMethod.DELETE)
-  public ResponseEntity<Void> borrarBlog(@PathVariable("id") int id) {
+  public ResponseEntity<Void> borrarCategoria(@PathVariable("id") int id) {
     Categoria cat = this.categoriaService.getCategoriaById(id);
     categoriaService.removeCategoria(cat);
 

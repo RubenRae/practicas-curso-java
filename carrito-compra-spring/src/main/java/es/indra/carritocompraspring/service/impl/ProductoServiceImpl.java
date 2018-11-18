@@ -11,8 +11,10 @@ import es.indra.carritocompraspring.service.ProductoService;
 @Component
 public class ProductoServiceImpl implements ProductoService {
 
+
   @Autowired
   ProductoRepository productoRepository;
+
 
   @Override
   public List<Producto> getAllProductos() {
@@ -50,6 +52,14 @@ public class ProductoServiceImpl implements ProductoService {
     } else {
       return null;
     }
+  }
+
+  @Override
+  public List<Producto> getAllProductosCategoria(int id) {
+
+
+    return this.productoRepository.getProductoByCategoria_id(id);
+
   }
 
 

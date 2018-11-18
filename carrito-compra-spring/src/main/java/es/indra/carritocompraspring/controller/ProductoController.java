@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import es.indra.carritocompraspring.aspects.anotacion.MedidorTiempo;
 import es.indra.carritocompraspring.model.Producto;
+import es.indra.carritocompraspring.service.CategoriaService;
 import es.indra.carritocompraspring.service.ProductoService;
 
 
@@ -20,7 +20,10 @@ public class ProductoController {
   @Autowired
   ProductoService productoService;
 
-  @MedidorTiempo
+  @Autowired
+  CategoriaService categoriaService;
+
+  // @MedidorTiempo
   @RequestMapping(value = "/producto", method = RequestMethod.GET)
   public ResponseEntity<List<Producto>> getAllProductos() {
 
@@ -34,9 +37,9 @@ public class ProductoController {
   }
 
   @RequestMapping(value = "/producto/{id}", method = RequestMethod.GET)
-  public ResponseEntity<Producto> getById(@PathVariable("id") int id) {
+  public ResponseEntity<Producto> getProductoById(@PathVariable("id") int id) {
     Producto p = this.productoService.getProductoById(id);
-    if (p == null) {
+    if (p != null) {
       ResponseEntity<Producto> response = new ResponseEntity<Producto>(p, HttpStatus.OK);
       return response;
 
@@ -76,6 +79,21 @@ public class ProductoController {
       ResponseEntity<Producto> error = new ResponseEntity<Producto>(pro, HttpStatus.NOT_FOUND);
       return error;
     }
+  }
+
+
+  @RequestMapping(value = "/producto/categoria/{id}", method = RequestMethod.GET)
+  public ResponseEntity<List<Producto>> getAllProductosCategoria(@PathVariable("id") int id) {
+
+    List<Producto> todosLosProductos = this.productoService.getAllProductosCategoria(id);
+
+    ResponseEntity<List<Producto>> response =
+        new ResponseEntity<List<Producto>>(todosLosProductos, HttpStatus.OK);
+
+    return response;
+
+
+
   }
 
 }

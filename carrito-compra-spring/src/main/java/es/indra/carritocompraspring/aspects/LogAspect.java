@@ -17,7 +17,7 @@ public class LogAspect {
   }
 
   @Around("@annotation(es.indra.carritocompraspring.aspects.anotacion.MedidorTiempo)")
-  public void tiempoDeEjecucion(ProceedingJoinPoint joinPoint) throws Throwable {
+  public void around(ProceedingJoinPoint joinPoint) throws Throwable {
     long inicio = System.currentTimeMillis();
     joinPoint.proceed();
     long tiempo = System.currentTimeMillis() - inicio;

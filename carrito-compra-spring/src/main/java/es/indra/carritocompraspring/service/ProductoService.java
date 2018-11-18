@@ -17,4 +17,6 @@ public interface ProductoService {
 
   public Producto updateProducto(Producto pro);
 
+  public List<Producto> getAllProductosCategoria(int id);
+
 }

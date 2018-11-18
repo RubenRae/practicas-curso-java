@@ -15,6 +15,7 @@ public class CategoriaServiceImpl implements CategoriaService {
   @Autowired
   CategoriaRepository categoriaRepository;
 
+  // @MedidorTiempo
   @Override
   public List<Categoria> getAllCategories() {
 
