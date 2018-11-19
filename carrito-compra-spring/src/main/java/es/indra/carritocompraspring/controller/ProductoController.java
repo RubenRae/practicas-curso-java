@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import es.indra.carritocompraspring.model.Producto;
-import es.indra.carritocompraspring.service.CategoriaService;
 import es.indra.carritocompraspring.service.ProductoService;
 
 
@@ -20,8 +19,6 @@ public class ProductoController {
   @Autowired
   ProductoService productoService;
 
-  @Autowired
-  CategoriaService categoriaService;
 
   // @MedidorTiempo
   @RequestMapping(value = "/producto", method = RequestMethod.GET)
